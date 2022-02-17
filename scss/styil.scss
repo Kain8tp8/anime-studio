@@ -5,11 +5,10 @@
 
 body {
   height: 100vh;
-  
+
   padding: 0;
   margin: 0;
- background-color: #fff;
- 
+  background-color: #fff;
 }
 .contheader {
   width: 99%;
@@ -20,7 +19,11 @@ body {
   align-items: center;
   border-radius: 3px;
   background: rgb(10, 10, 39);
-  background: linear-gradient(90deg,rgba(10, 10, 39, 1) 0%,rgba(27, 7, 112, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 39, 1) 0%,
+    rgba(27, 7, 112, 1) 100%
+  );
   -webkit-box-shadow: 0px 20px 50px 10px rgba(34, 60, 80, 0.44);
   -moz-box-shadow: 0px 20px 50px 10px rgba(34, 60, 80, 0.44);
   box-shadow: 0px 20px 50px 10px rgba(34, 60, 80, 0.44);
@@ -28,7 +31,7 @@ body {
   .art {
     width: 100%;
     height: 100%;
-    position: absolute; 
+    position: absolute;
     border-radius: 3px;
   }
   .head_art {
@@ -37,10 +40,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     .search {
       width: 50%;
-      height: 30px;;
+      height: 30px;
       background-color: rgb(29, 29, 42);
       border: none;
       color: #fff;
@@ -52,7 +55,6 @@ body {
   }
 
   .navbar {
-   
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,7 +72,7 @@ body {
   }
 }
 /////////////////////////////////////////////
-.container{
+.container {
   width: 80%;
   height: 350px;
   margin: auto;
@@ -79,26 +81,29 @@ body {
   justify-content: center;
   background-color: #000;
   position: relative;
-  .m_art{
+  .m_art {
     width: 100%;
     height: 350px;
-    position: absolute
+    position: absolute;
   }
-  .mainart{
+  .mainart {
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: end;
     position: relative;
-    .arttext{
+    .arttext {
+      padding: 5px;
       margin: 0;
       text-align: center;
       font-size: 50px;
-      position:absolute;
+      position: absolute;
       color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
       .link {
         margin: 10px;
         text-decoration: none;
@@ -107,7 +112,7 @@ body {
       }
     }
   }
-  .Mtext{
+  .Mtext {
     width: 100%;
     height: 100%;
     display: flex;
@@ -117,19 +122,20 @@ body {
     position: relative;
     color: #fff;
     padding: 10px;
-    h1{
+    h1 {
       font-weight: 600;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
+      text-transform: uppercase;
     }
-    strong{
+    strong {
       margin: 0;
       font-size: 13px;
       color: rgba(255, 255, 255, 0.246);
     }
-    p{
+    p {
       font-size: 20px;
     }
-    .textM{
+    .textM {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -141,7 +147,7 @@ body {
         text-transform: uppercase;
         color: #fff;
       }
-      .btn{
+      .btn {
         padding: 5px;
         color: #fff;
         background-color: rgb(26, 5, 70);
@@ -153,5 +159,45 @@ body {
       }
     }
   }
-  
+}
+.colum {
+  margin: 0;
+
+  .cont_slaide {
+    max-width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    .slider__control{
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+    }
+    .catalog {
+      overflow: hidden;
+      .slider_up {
+        margin: 0;
+        padding: 0;
+        flex: 0 0 50%;
+        max-width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        .slider_list {
+          list-style: none;
+          position: relative;
+        }
+      }
+    }
+  }
 }
