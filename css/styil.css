@@ -58,9 +58,9 @@ body {
 .contheader .head_art .search {
   width: 50%;
   height: 30px;
-  background-color: #1d1d2a;
+  background-color: #fff;
   border: none;
-  color: #fff;
+  color: #010101;
   font-size: 15px;
 }
 
@@ -234,11 +234,11 @@ body {
   --marquee-height: 40vh;
   /* --marquee-elements: 12; */
   /* defined with JavaScript */
-  --marquee-elements-displayed: 6;
+  --marquee-elements-displayed: 6.5;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
 }
 
 .marquee {
@@ -253,9 +253,12 @@ body {
 }
 
 .marquee h1 {
-  color: #fff;
+  padding: 0;
+  margin: 0;
+  color: #3daa1c;
   font-family: 'Montserrat';
   text-align: center;
+  font-size: 22pt;
 }
 
 .marquee .marquee:before,
@@ -330,7 +333,7 @@ body {
       flex-shrink: 0;
   width: var(--marquee-element-width);
   max-height: 100%;
-  font-size: calc(var(--marquee-height) * 0 / 4);
+  font-size: calc(var(--marquee-height) * 0 / 5);
   /* 5rem; */
   white-space: nowrap;
 }
