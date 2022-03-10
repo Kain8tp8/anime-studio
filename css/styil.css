@@ -61,12 +61,11 @@ body {
   background-color: #1d1d2a;
   border: none;
   color: #fff;
-  font-size: 15px; 
+  font-size: 15px;
 }
 
 .contheader .head_art .search .search:focus {
   outline: none;
-
 }
 
 .contheader .navbar {
@@ -98,7 +97,6 @@ body {
   width: 80%;
   height: 350px;
   margin: auto;
-  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,6 +109,7 @@ body {
           justify-content: center;
   background-color: #000;
   position: relative;
+  margin-top: 20px;
 }
 
 .container .m_art {
@@ -222,13 +221,7 @@ body {
   border-right: 0;
   cursor: pointer;
 }
-.catalog{
-  width: 90%;
 
-  margin: auto;
-  margin-top: 30px;
-  
-}
 * {
   margin: 0;
   padding: 0;
@@ -238,49 +231,56 @@ body {
 
 :root {
   --marquee-width: 90vw;
-  --marquee-height: 35vh;
-  --marquee-elements: 12;
+  --marquee-height: 40vh;
+  /* --marquee-elements: 12; */
   /* defined with JavaScript */
-  --marquee-elements-displayed: 5;
+  --marquee-elements-displayed: 6;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
 }
 
 .marquee {
+  padding: 0;
+  margin: auto;
   width: var(--marquee-width);
   height: var(--marquee-height);
-  background-color: #111;
-  color: #eee;
+  background-color: #0f0f0f;
   overflow: hidden;
   position: relative;
-  
+  margin-top: 15px;
 }
 
-.marquee:before,
-.marquee:after {
+.marquee h1 {
+  color: #fff;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.marquee .marquee:before,
+.marquee .marquee:after {
   position: absolute;
   top: 0;
-  width: 60px;
+  width: 10rem;
   height: 100%;
   content: "";
   z-index: 1;
 }
 
-.marquee:before {
+.marquee .marquee:before {
   left: 0;
-  background: -webkit-gradient(linear, left top, right top, from(#111), to(transparent));
-  background: linear-gradient(to right, #111 0%, transparent 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#111111), to(transparent));
+  background: linear-gradient(to right, #111111 0%, transparent 100%);
 }
 
-.marquee:after {
+.marquee .marquee:after {
   right: 0;
   background: -webkit-gradient(linear, right top, left top, from(#111), to(transparent));
   background: linear-gradient(to left, #111 0%, transparent 100%);
 }
 
-.marquee-content {
+.marquee .marquee-content {
   list-style: none;
   height: 100%;
   display: -webkit-box;
@@ -288,11 +288,11 @@ body {
   display: flex;
   -webkit-animation: scrolling var(--marquee-animation-duration) linear infinite;
           animation: scrolling var(--marquee-animation-duration) linear infinite;
+  /* .marquee-content:hover {
+      animation-play-state: paused;
+     } */
 }
 
-/* .marquee-content:hover {
-  animation-play-state: paused;
-} */
 @-webkit-keyframes scrolling {
   0% {
     -webkit-transform: translateX(0);
@@ -303,6 +303,7 @@ body {
             transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
   }
 }
+
 @keyframes scrolling {
   0% {
     -webkit-transform: translateX(0);
@@ -314,7 +315,7 @@ body {
   }
 }
 
-.marquee-content li {
+.marquee .marquee-content li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,23 +335,22 @@ body {
   white-space: nowrap;
 }
 
-.marquee-content li img {
+.marquee .marquee-content li img {
   width: 100%;
-  /* height: 100%; */
-  /* border: 2px solid #eee; */
+  border: 2px solid black;
 }
 
-@media (max-width: 600px) {
-  html {
+@media (max-width: 1000px) {
+  .marquee .marquee-content .marquee .marquee-content html {
     font-size: 12px;
   }
-  :root {
+  .marquee .marquee-content .marquee .marquee-content :root {
     --marquee-width: 100vw;
     --marquee-height: 16vh;
     --marquee-elements-displayed: 3;
   }
-  .marquee:before,
-  .marquee:after {
+  .marquee .marquee-content .marquee .marquee-content .marquee:before,
+  .marquee .marquee-content .marquee .marquee-content .marquee:after {
     width: 5rem;
   }
 }

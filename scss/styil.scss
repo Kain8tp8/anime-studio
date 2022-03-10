@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -81,6 +82,7 @@ body {
   justify-content: center;
   background-color: #000;
   position: relative;
+  margin-top: 20px;
   .m_art {
     width: 100%;
     height: 350px;
@@ -161,7 +163,6 @@ body {
   }
 }
 ////////////////////////////////////////////////////////////
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 * {
   margin: 0;
@@ -169,89 +170,96 @@ body {
   box-sizing: border-box;
 }
 :root {
-  --marquee-width: 80vw;
-  --marquee-height: 20vh;
+  --marquee-width: 90vw;
+  --marquee-height: 40vh;
   /* --marquee-elements: 12; */ /* defined with JavaScript */
-  --marquee-elements-displayed: 5;
+  --marquee-elements-displayed: 6;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
 }
 
 .marquee {
+  padding: 0;
+  margin: auto;
   width: var(--marquee-width);
   height: var(--marquee-height);
-  background-color: #111;
-  color: #eee;
+  background-color: rgb(15, 15, 15);
   overflow: hidden;
   position: relative;
-}
-.marquee:before,
-.marquee:after {
-  position: absolute;
-  top: 0;
-  width: 10rem;
-  height: 100%;
-  content: "";
-  z-index: 1;
-}
-.marquee:before {
-  left: 0;
-  background: linear-gradient(to right, #111 0%, transparent 100%);
-}
-.marquee:after {
-  right: 0;
-  background: linear-gradient(to left, #111 0%, transparent 100%);
-}
-.marquee-content {
-  list-style: none;
-  height: 100%;
-  display: flex;
-  animation: scrolling var(--marquee-animation-duration) linear infinite;
-}
-/* .marquee-content:hover {
-  animation-play-state: paused;
-} */
-@keyframes scrolling {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      calc(-1 * var(--marquee-element-width) * var(--marquee-elements))
-    );
-  }
-}
-.marquee-content li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* text-align: center; */
-  flex-shrink: 0;
-  width: var(--marquee-element-width);
-  max-height: 100%;
-  font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
-  white-space: nowrap;
-}
-
-.marquee-content li img {
-  width: 100%;
-  /* height: 100%; */
-  border: 2px solid #eee;
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 12px;
-  }
-  :root {
-    --marquee-width: 100vw;
-    --marquee-height: 16vh;
-    --marquee-elements-displayed: 3;
+  margin-top: 15px;
+  h1{
+    color: #fff;
+    font-family: 'Montserrat';
+    text-align: center;
+    
   }
   .marquee:before,
   .marquee:after {
-    width: 5rem;
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, rgb(17, 17, 17) 0%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, #111 0%, transparent 100%);
+  }
+
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+    /* .marquee-content:hover {
+      animation-play-state: paused;
+     } */
+    @keyframes scrolling {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(
+          calc(-1 * var(--marquee-element-width) * var(--marquee-elements))
+        );
+      }
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* text-align: center; */
+      flex-shrink: 0;
+      width: var(--marquee-element-width);
+      max-height: 100%;
+      font-size: calc(var(--marquee-height) * 0 / 4); /* 5rem; */
+      white-space: nowrap;
+      img {
+        width: 100%;
+        // height: 100%;
+        border: 2px solid rgb(0, 0, 0);
+      }
+    }
+    @media (max-width: 1000px) {
+      .marquee .marquee-content html {
+        font-size: 12px;
+      }
+      .marquee .marquee-content :root {
+        --marquee-width: 100vw;
+        --marquee-height: 16vh;
+        --marquee-elements-displayed: 3;
+      }
+      .marquee .marquee-content .marquee:before,
+      .marquee .marquee-content .marquee:after {
+        width: 5rem;
+      }
+    }
   }
 }
