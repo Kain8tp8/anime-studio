@@ -47,7 +47,7 @@ body {
       height: 30px;
       background-color: #fff;
       border: none;
-      color: rgb(1,1,1);
+      color: rgb(1, 1, 1);
       font-size: 15px;
       .search:focus {
         outline: none;
@@ -173,7 +173,7 @@ body {
   --marquee-width: 90vw;
   --marquee-height: 40vh;
   /* --marquee-elements: 12; */ /* defined with JavaScript */
-  --marquee-elements-displayed: 6.5;
+  --marquee-elements-displayed: 5;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
@@ -189,31 +189,36 @@ body {
   overflow: hidden;
   position: relative;
   margin-top: 15px;
-  h1{
+  h1 {
     padding: 0;
     margin: 0;
     color: rgb(61, 170, 28);
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
     font-size: 22pt;
   }
-  .marquee:before,
-  .marquee:after {
-    position: absolute;
-    top: 0;
-    width: 10rem;
-    height: 100%;
-    content: "";
-    z-index: 1;
-  }
-  .marquee:before {
-    left: 0;
-    background: linear-gradient(to right, rgb(17, 17, 17) 0%, transparent 100%);
-  }
-  .marquee:after {
-    right: 0;
-    background: linear-gradient(to left, #111 0%, transparent 100%);
-  }
+  // .marquee:before {
+  //   position: absolute;
+  //   top: 0;
+  //   width: 10rem;
+  //   height: 100%;
+  //   content: "";
+  //   z-index: 1;
+
+  //   left: 0;
+  //   background: linear-gradient(to right, rgb(17, 17, 17) 0%, transparent 100%);
+  // }
+  // .marquee:after {
+  //   position: absolute;
+  //   top: 0;
+  //   width: 10rem;
+  //   height: 100%;
+  //   content: "";
+  //   z-index: 1;
+
+  //   right: 0;
+  //   background: linear-gradient(to left, #111 0%, transparent 100%);
+  // }
 
   .marquee-content {
     list-style: none;
@@ -237,31 +242,48 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      /* text-align: center; */
+      text-align: center; 
       flex-shrink: 0;
       width: var(--marquee-element-width);
       max-height: 100%;
-      font-size: calc(var(--marquee-height) * 0 / 5); /* 5rem; */
+      font-size: calc(var(--marquee-height) * 1 / 4); 
       white-space: nowrap;
       img {
         width: 100%;
         height: 100%;
-        border: 2px solid rgb(0, 0, 0);
+        // border: 2px solid rgb(0, 0, 0);
       }
     }
     @media (max-width: 1000px) {
-      .marquee .marquee-content html {
+      html {
         font-size: 12px;
       }
-      .marquee .marquee-content :root {
+      :root {
         --marquee-width: 100vw;
         --marquee-height: 16vh;
         --marquee-elements-displayed: 3;
       }
-      .marquee .marquee-content .marquee:before,
-      .marquee .marquee-content .marquee:after {
+      :before,
+      :after {
         width: 5rem;
       }
     }
   }
+}
+
+
+.btn{
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  background-color: #fff;
+  padding: 30px;
+  margin: auto;
 }

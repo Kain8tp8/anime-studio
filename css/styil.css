@@ -234,7 +234,7 @@ body {
   --marquee-height: 40vh;
   /* --marquee-elements: 12; */
   /* defined with JavaScript */
-  --marquee-elements-displayed: 6.5;
+  --marquee-elements-displayed: 5;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
@@ -256,31 +256,9 @@ body {
   padding: 0;
   margin: 0;
   color: #3daa1c;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   text-align: center;
   font-size: 22pt;
-}
-
-.marquee .marquee:before,
-.marquee .marquee:after {
-  position: absolute;
-  top: 0;
-  width: 10rem;
-  height: 100%;
-  content: "";
-  z-index: 1;
-}
-
-.marquee .marquee:before {
-  left: 0;
-  background: -webkit-gradient(linear, left top, right top, from(#111111), to(transparent));
-  background: linear-gradient(to right, #111111 0%, transparent 100%);
-}
-
-.marquee .marquee:after {
-  right: 0;
-  background: -webkit-gradient(linear, right top, left top, from(#111), to(transparent));
-  background: linear-gradient(to left, #111 0%, transparent 100%);
 }
 
 .marquee .marquee-content {
@@ -328,33 +306,54 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* text-align: center; */
+  text-align: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: var(--marquee-element-width);
   max-height: 100%;
-  font-size: calc(var(--marquee-height) * 0 / 5);
-  /* 5rem; */
+  font-size: calc(var(--marquee-height) * 1 / 4);
   white-space: nowrap;
 }
 
 .marquee .marquee-content li img {
   width: 100%;
-  border: 2px solid black;
+  height: 100%;
 }
 
 @media (max-width: 1000px) {
-  .marquee .marquee-content .marquee .marquee-content html {
+  .marquee .marquee-content html {
     font-size: 12px;
   }
-  .marquee .marquee-content .marquee .marquee-content :root {
+  .marquee .marquee-content :root {
     --marquee-width: 100vw;
     --marquee-height: 16vh;
     --marquee-elements-displayed: 3;
   }
-  .marquee .marquee-content .marquee .marquee-content .marquee:before,
-  .marquee .marquee-content .marquee .marquee-content .marquee:after {
+  .marquee .marquee-content :before,
+  .marquee .marquee-content :after {
     width: 5rem;
   }
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid {
+  background-color: #fff;
+  padding: 30px;
+  margin: auto;
 }
 /*# sourceMappingURL=styil.css.map */
