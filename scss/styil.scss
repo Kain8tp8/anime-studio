@@ -41,17 +41,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .search {
-      width: 50%;
-      height: 30px;
-      background-color: #fff;
-      border: none;
-      color: rgb(1, 1, 1);
-      font-size: 15px;
-      .search:focus {
-        outline: none;
-      }
+    .logatip{
+      font-size: 30px;
+      font-weight: bolder;
     }
   }
 
